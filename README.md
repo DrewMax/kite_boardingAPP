@@ -9,11 +9,5 @@ WHEN i make my choices
 THEN i provided with a map of location that meet my requirements
 WHEN I click on a specific location
 THEN I AM GIVEN detailed weather info of that location. 
-
-
-WHEN i view the map 
-THEN 
-WHEN i v
-WHEN I am at the landing page 
-THEN i want too see peoples reaction to the sites for boarding 
-WHEN I 
+WHEN I want to see the latest news
+THEN i can open up a page with news and posts
