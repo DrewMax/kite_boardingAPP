@@ -8,6 +8,8 @@
 // json response 
 // local storage for sign up sheet
 // interactive map
+// animated news reel
+
 
 function test() {
     console.log("this is a test")
