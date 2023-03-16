@@ -1,4 +1,12 @@
 // querySelectors to HTML
+const searchForm = document.querySelector(".searchForm");
+const submitBtn = document.querySelector(".submitBtn");
+
+var tasks = [];
+
+var saveBtn = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+};
 
 // request and response API
 // GET && POST for API
@@ -17,3 +25,4 @@ function test() {
 
 test();
 
+document.addEventListener("click", submitBtn())

@@ -47,22 +47,77 @@
                 <h3 class="oi oi-plus mr-2 bg-secondary text-warning font-weight-bold"> LET CHAT </h3>
             </button>
     </header>
-        // organise eventListeners, querySelectors to link between HTML && js
+
+     <!-- Subscriotion form -->
+    <section>
+       <label for="name">Enter full name:</label>
+            <input type="name" placeholder="Your Name" name="name" id="modalName" class="form-control"/>
+            <label for="modalEmail">Enter email address:</label>
+            <input type="email" placeholder="Email Address" name="email" id="modalEmail" class="form-control"/>
+
+    </section>
+  // organise eventListeners, querySelectors to link between HTML && js
         // structure 
         // establish color, font family
         // add agree to terms and conditions 
 
     <section>
-        // jumbotron with sign up sheet
         <div class="jumbotron">
-         // moving images around carousel using foundation.css
-        <img class="img1 col-12" src="/w13/assets/css/img/Kitesurfing_Jpg.jpeg" alt="image of man riding a wave on a kiteboard">
-        <img src="/" alt="TBC">
-        <img src="/" alt="TBC">
-        <img src="/" alt="TBC">
-        // links to other sites, built into images
-       
-        </div>
+          <form class="searchForm" id="searchForm">
+            <div class="form-group getBtn">
+            
+                <!-- Temperature -->
+                <label for="temperature">Choose your Temperature:</label>
+                    <select name="temperature" class="searchCritera">
+                            <option value="cold">Cold</option>
+                            <option value="hot">Hot</option>
+                            <option value="superHot">Super Hot</option>
+                            <option value="hell">Hell</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="dante">Dantes Inferno</option>
+                    </select>
+                <br>
+
+                <!-- Experience level -->
+                <label for="experience">Choose you level:</label>
+                    <select name="experience" class="searchCritera">
+                        <option value="novice">Novice</option>
+                        <option value="advanced">advanced beginner</option>
+                        <option value="competent">Competant</option>
+                        <option value="proficiant">Proficiant</option>
+                        <option value="expert">Expert</option>
+                        <option value="isaac">Isaac</option>
+                    </select>
+                <br>
+
+                <label for="pressure">What kind of wind pressure are you looking for?</label>
+                    <select name="pressure" class="searchCritera">
+                        <option value="low">Low (> 1008 hPa)</option>
+                        <option value="high">High (1013+ hPa)</option>
+                    </select>
+                <br>
+
+
+                <label for="outdoor">Any environmental activities(optional)</label>
+                    <select name="outdoor" class="searchCritera">
+                        <option value="mountain">Mountain Climbing</option>
+                        <option value="rafting">River Rafting</option>
+                        <option value="surfing">Surfing</option>
+                        <option value="hunt">Leprechaun Hunting</option>
+                    </select>
+                    <br>
+                        <input type="checkbox" class="flipswitch" /> &nbsp;
+                        <span class="checkbox-wrapper">
+                            I agree to the <a href="#">Terms and Conditions</a></span>
+                        <br>
+
+                <button type="button" class="submitBtn">
+                    <span>Submit</span>
+                </button>
+    
+             </div>
+        </form>
+     </div>
 
         // sign up sheet, name, location, email
         // module - button to activate
@@ -82,25 +137,7 @@
         
         
     </section>
-    <form>
-        <div class="form-group getBtn">
-            <label for="name">Enter full name:</label>
-            <input type="name" placeholder="Your Name" name="name" id="modalName" class="form-control"/>
-            <label for="modalEmail">Enter email address:</label>
-            <input type="email" placeholder="Email Address" name="email" id="modalEmail" class="form-control"/>
-           
-           
-            <label for="cars">Choose you level:</label>
-            <select name="experience" class="experience">
-              <option value="novice">Novice</option>
-              <option value="advanced">advanced beginner</option>
-              <option value="competent">Competant</option>
-              <option value="proficiant">Proficiant</option>
-              <option value="expert">Expert</option>
-              <option value="isaac">Isaac</option>
-            </select>
-        </div>
-        </form>
+   
     // interactive map with search bar nad response tab
    // results with temp, wind and stuff
         // search criteria 
@@ -270,12 +307,11 @@
      
      <div class=""></div>
 
-   
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
      <script src="./assets/js/script.js"></script>
 </body>
