@@ -1,6 +1,7 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 
@@ -17,7 +18,7 @@
     font-weight: 300%;
     
 }
-.searchForm .submitBtn {
+#searchForm button {
   background-color: #04AA6D;
   border: 3px solid black;
   color: white;
@@ -26,116 +27,124 @@
   margin: 4px 2px;
   cursor: pointer;
 }
-.searchCriteria option {
-    border-radius: 25px;
+ /* head style starts */
+header {
+  padding: 20px 35px;
+  background-color: #d14242;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-image: url(./img/Kitesurfing_Jpg.jpeg);
+  background-size: cover;
+  background-position: 80%;
+  background-attachment: fixed;
+  z-index: 9999;
 }
-.flipswitch {
-    position: relative;
-    background: white;
-    width: 120px;
-    height: 40px;
-    -webkit-appearance: initial;
-    border-radius: 3px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    outline: none;
-    font-size: 14px;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid #ddd;
-  }
-  
-  .flipswitch:after {
-    position: absolute;
-    top: 5%;
-    display: block;
-    line-height: 32px;
-    width: 45%;
-    height: 90%;
-    background: #fff;
-    box-sizing: border-box;
-    text-align: center;
-    transition: all 0.3s ease-in 0s;
-    color: black;
-    border: #888 1px solid;
-    border-radius: 3px;
-  }
-  
-  .flipswitch:after {
-    left: 2%;
-    content: "NO";
-  }
-  
-  .flipswitch:checked:after {
-    left: 53%;
-    content: "YES";
-  }
-  
-  header {
-    background-color: black;
-    color: red;
-    padding: 10px;
-  }
-  
-  footer {
-    background-color: black;
-    color: red;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  /* Optional: Add styles for links */
-  header a, footer a {
-    color: red;
-    text-decoration: none;
-  }
-  
-  header a:hover, footer a:hover {
-    text-decoration: underline;
-  }
+header h1 {
+  font-weight: bold;
+  font-size: 36px;
+  color: black;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+header a {
+  text-decoration: none;
+  /*color: var(--primary-color);*/
+}
+header nav {
+ 
+  margin: 7px 0;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+header nav ul li a {
+  padding: 10px 15px;
+  font-weight: lighter;
+  font-size: 1.5vw;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+header nav ul li a:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 15px;
+  text-shadow: none;
+}
 
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px 0;
-  }
+/* footer styles start */
+
+footer {
+  background: var(--primary-color);
+  width: 100%;
+  padding: 40px 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer h2 {
+  color: var(--secondary-color);
+  font-size: 30px;
+  margin: 0;
+}
+footer div {
+  line-height: 1.5;
+  text-align: right;
+}
+footer a {
+  color: #024e76;
+}
+
+  /* Style the modal */
+.modal {
+  display: none; 
+  position: fixed; /* Position it in the middle of the screen */
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* Add a semi-transparent background */
+}
+
+/* Style the modal content */
+.modal-content {
+  background-color: #d14242;
+  margin: 10% auto; /* Center it vertically and horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+}
+
+
+
+/* Style the close button */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
   
-  /* Style the nav */
-  nav {
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    margin: 0 10px;
-  }
-  
-  nav a {
-    color: black;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-  
-  nav a:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  
-  
+}
+
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
   
   
   

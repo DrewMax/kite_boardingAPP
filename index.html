@@ -28,6 +28,33 @@
     </header>
 
      <!-- Subscriotion form -->
+    <!-- Button to open the modal -->
+<button id="open-modal-btn">Sign Up</button>
+
+<!-- Modal HTML -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <br>
+          <label for="experience">Experience</label>
+          <input type="experience" id="experience" name="experience" required>
+          <br>
+          <label for="questions">Questions:</label>
+          <textarea name="textarea" id="questions" cols="30" rows="10"></textarea>
+          <br>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+
     <section>
        <label for="name">Enter full name:</label>
             <input type="name" placeholder="Your Name" name="name" id="modalName" class="form-control"/>
@@ -35,15 +62,22 @@
             <input type="email" placeholder="Email Address" name="email" id="modalEmail" class="form-control"/>
 
     </section>
-  // organise eventListeners, querySelectors to link between HTML && js
-        // structure 
-        // establish color, font family
-        // add agree to terms and conditions 
-
+ 
     <section>
-        <div class="jumbotron">
-          <form class="searchForm" id="searchForm">
-            <button></button>
+        <div class="/">
+          <form class="months" id="searchForm">
+            <button id="button1">January</button>
+            <button id="button2">February</button>
+            <button id="button3">March</button>
+            <button id="button4">April</button>
+            <button id="button5">May</button>
+            <button id="button6">June</button>
+            <button id="button7">July</button>
+            <button id="button8">August</button>
+            <button id="button9">September</button>
+            <button id="button10">October</button>
+            <button id="button11">November</button>
+            <button id="button12">December</button>
         </form>
      </div>
 
