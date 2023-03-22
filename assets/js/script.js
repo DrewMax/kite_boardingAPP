@@ -30,27 +30,37 @@ var locations = [
 // local storage for sign up sheet
 
 // Insert interactive map and marker
-function initMap() {
-    const blouberg = {lat: -3.35263, lng: 40.01689};
-    
-    // create map, centered at Blouberg
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 2,
-        center: blouberg,
-    });
-
-    // create markers for all locations
-    for (var i=0; i<locations.length; i++) {
-        const location = locations[i];
-        const marker = new google.maps.Marker({
-            position: {lat: parseFloat(location[1]), lng: parseFloat(location[2])},
-            map: map,
-            title: location[0],
+window.addEventListener("load", function() {
+    // ensures that the map is loaded after the rest of the
+    function initMap() {
+        const blouberg = {lat: -3.35263, lng: 40.01689};
+        
+        // create map, centered at Blouberg
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 2,
+            center: blouberg,
         });
+    
+        // create markers for all locations
+        for (var i=0; i<locations.length; i++) {
+            const location = locations[i];
+            const marker = new google.maps.Marker({
+                position: {lat: parseFloat(location[1]), lng: parseFloat(location[2])},
+                map: map,
+                title: location[0],
+            });
+    
+            marker.addEventListener('click', function() {
+                console.log("marker clicked", location[0]);
+            });
+        };
     };
-};
+    
+    window.initMap = initMap;
+    
 
-window.initMap = initMap;
+
+});
   
 
 // animated news reel
