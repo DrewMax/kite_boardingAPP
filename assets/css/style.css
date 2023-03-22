@@ -116,7 +116,7 @@ footer a {
 /* Style the modal content */
 .modal-content {
   background-color: #d14242;
-  margin: 10% auto; /* Center it vertically and horizontally */
+  margin: auto; /* Center it vertically and horizontally */
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -143,8 +143,3 @@ footer a {
   text-decoration: none;
   cursor: pointer;
 }
-
-
-  
-  
-  
