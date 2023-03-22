@@ -12,26 +12,6 @@ var seasonArr_10 = [["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kites
 var seasonArr_11 = [["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Essaouira Bay","31.5061699","-9.7661591",125,"kitesurf-essaouira-bay-morocco"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Safaga, Soma Bay","26.8564696","33.9575303",118,"kitesurf-safaga-soma-bay-egypt"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"]];
 var seasonArr_12 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
 
-var locations = [
-    ["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],
-    ["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],
-    ["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],
-    ["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],
-    ["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],
-    ["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],
-    ["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],
-    ["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],
-    ["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],
-    ["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"],
-    ["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],
-    ["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],
-    ["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],
-    ["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],
-    ["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],
-    ["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],
-    ["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"]
-];
-
 // querySelectors to HTML
 
 // request and response API
