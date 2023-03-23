@@ -89,21 +89,11 @@ var displayWeatherToday = function (city) {
     $("#apiTemp").text("Temperature: " + Math.round(city.main.temp*10)/10 + "°C");
     $("#apiHumidity").text("Humidity: " + city.main.humidity);
     $("#apiWind").text("Wind Speed: " + city.wind.speed + "KPH");
-
-    // searchTermEl.textContent=(city.name +", " + city.sys.country);
-    // dateEl.textContent=(moment().format("DD/MM/YY"));
-    // apiTempEl.textContent=("Temperature: " + Math.round(city.main.temp*10)/10 + "°C");
-    // apiHumidityEl.textContent=("Humidity: " + city.main.humidity);
-    // apiWindEl.textContent=("Wind Speed: " + city.wind.speed + "KPH");
     var iconCode = city.weather[0].icon;
     var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
     $('#icon').attr('src',iconUrl);
-    // UV levels don't seem to be available for FREE subscription under openWeather api
-    // apiUVEl.textContent=("UV: " + weather.weather.main);
+    
 };
-
-
-
 
 var getWeatherForecast = function(city) {
     // using Geocoding api to convert city into longitude/latitude 
@@ -140,7 +130,7 @@ var getWeatherForecast = function(city) {
                                 console.log(response);
                                 response.json().then(function(data) {
                                     console.log(data);
-                                    // displayWeatherForecast(data);
+                                    displayWeatherForecast(data);
                                 });
                             } else {
                                 alert(`Error: ${response.statusText}`);
@@ -159,6 +149,44 @@ var getWeatherForecast = function(city) {
         })
 };
 
+var displayWeatherForecast = function(city) {
+    // clear old forecast cards
+    $("#cardRows").empty();
+
+    // Find the first list item that starts at 12:00 noon
+    var firstNoonIndex = 0;
+        for (var i = 0; i < city.list.length; i++) {
+            if (city.list[i].dt_txt.includes('12:00:00')) {
+             firstNoonIndex = i;
+        break;
+        }
+    }
+
+    // Populate forecast starting from firstNoonIndex
+    console.log(city);
+    for (var i = firstNoonIndex; i < city.list.length; i += 8) {
+        var iconCode = city.list[i].weather[0].icon;
+        var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
+        var temp = Math.round(city.list[i].main.temp*10)/10 + "°C";
+        var humidity = city.list[i].main.humidity;
+        var $cardRows = $('#cardRows');
+        $("#forecastHeading").text("5 day Forecast");
+
+
+        // Create a new div with class and card structure
+        var $card = $('<div class="col-sm-3 col-lg-3 mb-2">' +
+                        '<div class="card">' +
+                            '<h5 class="card-header">' + city.list[i].dt_txt.split(" ")[0] + '</h5>' +
+                            '<div class="card-body">' +
+                                '<img id="iconDay' + i + '" src="' + iconUrl + '" alt="">' +
+                                '<p id="tempDay' + i + '">Temperature: ' + temp + '</p>' +
+                                '<p id="humidityDay' + i + '">Humidity: ' + humidity + '</p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>');
+        $cardRows.append($card);
+    }
+};
 
 
 
