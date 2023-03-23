@@ -13,44 +13,50 @@ var seasonArr_10 = [["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kites
 var seasonArr_11 = [["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Essaouira Bay","31.5061699","-9.7661591",125,"kitesurf-essaouira-bay-morocco"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Safaga, Soma Bay","26.8564696","33.9575303",118,"kitesurf-safaga-soma-bay-egypt"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"]];
 var seasonArr_12 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
 var allSeasons = [seasonArr_1, seasonArr_2, seasonArr_3, seasonArr_4, seasonArr_5, seasonArr_6, seasonArr_7, seasonArr_8, seasonArr_9, seasonArr_10, seasonArr_11, seasonArr_12];
-var locations = seasonArr_1; // set initial value to locations1
+var locations = seasonArr_1; // set initial locations
+
+// --------------------------- MODAL FUNCTIONS ---------------------------//
+
+function monthEl() {
+  document.getElementById("searchForm")
+  preventDefault();
+}
+
+// Get the modal and close button
+const modal = document.getElementById("signup-modal");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+// Get the button that opens the modal
+const openBtn = document.getElementById("open-modal-btn");
+
+// When the user clicks the button, open the modal
+openBtn.onclick = function() {
+  modal.style.display = "block";
+};
+
+// When the user clicks the close button, close the modal
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// --------------------------- WEATHER FUNCTIONS ---------------------------//
 
 
-// function monthEl() {
-//   document.getElementById("searchForm")
-//   preventDefault();
-// }
-
-// // Get the modal and close button
-// const modal = document.getElementById("signup-modal");
-// const closeBtn = document.getElementsByClassName("close")[0];
-
-// // Get the button that opens the modal
-// const openBtn = document.getElementById("open-modal-btn");
-
-// // When the user clicks the button, open the modal
-// openBtn.onclick = function() {
-//   modal.style.display = "block";
-// };
-
-// // When the user clicks the close button, close the modal
-// closeBtn.onclick = function() {
-//   modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    // This code will execute only after the page has finished loading THINK IT CAN BE REMOVED....
+// ---------------------------- MAPS FUNCTIONS ----------------------------//
+
+// This code will execute only after the page has finished loading THINK IT CAN BE REMOVED....
+// document.addEventListener("DOMContentLoaded", function() {
   
-    // Insert interactive map and marker
     // This function MUST be placed towards the end
     var initMap = function() {
         const blouberg = {lat: -3.35263, lng: 40.01689};
@@ -85,9 +91,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 map: map,
                 title: location[0],
             });
-            markers.push(marker);
+            markers.push(marker); //it's supposed to be marker(s). Do NOT change to marker.
 
-            
             const infowindow = new google.maps.InfoWindow({
                 content: location[0],
                 ariaLabel: location[0],
@@ -140,21 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.initMap = initMap;
 
-});
-
-// // click event handler for button1
-// document.getElementById('button1').addEventListener('click', function() {
-//     event.preventDefault();
-
-//     console.log("button1 was clicked");
-//     locations = seasonArr_1; // update currentLocations to locations1
-//     console.log(typeof map, map instanceof google.maps.Map);
-
-//     createMarkers(map);
-//     console.log("button1", locations);
 // });
-
-
 
 
 // The initMap function is used as a callback. This is to prevent GoogleMaps API callback before the 
@@ -164,8 +155,3 @@ const googleMapsScript = document.createElement('script');
 googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key='+ mapApiKey+'&callback=initMap';
 document.head.appendChild(googleMapsScript);
 
-
-
-
-
-  
