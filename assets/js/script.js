@@ -1,3 +1,4 @@
+// map variables
 const mapApiKey = "AIzaSyCtJSDbUKLSn6_t86GsjWt6dLbqj9KeDb8";
 var map;
 var seasonArr_1 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];				
@@ -14,6 +15,10 @@ var seasonArr_11 = [["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vi
 var seasonArr_12 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
 var allSeasons = [seasonArr_1, seasonArr_2, seasonArr_3, seasonArr_4, seasonArr_5, seasonArr_6, seasonArr_7, seasonArr_8, seasonArr_9, seasonArr_10, seasonArr_11, seasonArr_12];
 var locations = seasonArr_1; // set initial locations
+// weather variables
+const myApiKey = "2ca732745c4860a1e30f12f65cec56c5";
+var lat = "";
+var lon = "";
 
 // --------------------------- MODAL FUNCTIONS ---------------------------//
 
@@ -48,6 +53,92 @@ window.onclick = function(event) {
 
 // --------------------------- WEATHER FUNCTIONS ---------------------------//
 
+var getWeather = function(city) {
+    //format the OpenWeather api url
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" 
+    + city.replace(" ","%20") 
+    + "&APPID="
+    + myApiKey
+    + "&units=metric"; 
+    console.log(apiUrl);
+
+    // make a request to the url
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                console.log(response);
+                response.json().then(function(data) {
+                    console.log(data);
+                    displayWeatherToday(data);
+                });
+            } else {
+                alert(`Error: ${response.statusText}`);
+            }
+        })
+        .catch(function(error) {
+            // Notice this `.catch()` getting chained onto the end of the `.then()` method
+            alert("Unable to connect to OpenWeather");
+        });
+};
+
+
+
+
+
+
+var getWeatherForecast = function(city) {
+    // using Geocoding api to convert city into longitude/latitude 
+    //format the Geocoding api url
+    var geoApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" 
+        + city.replace(" ","%20") 
+        + "&limit=5&appid=" + myApiKey
+        + "&units=metric"; 
+    console.log(geoApiUrl);
+
+    // make a request to the url
+    fetch(geoApiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                console.log(response);
+                response.json().then(function(data) {
+                    lat = data[0].lat;
+                    lon = data[0].lon;
+                    var name = data[0].name;
+                    var country = data[0].country;
+                    console.log(lat+name+country+lon);
+
+                    // format the forecast api url
+                    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" 
+                        + lat 
+                        + "&lon=" + lon
+                        + "&appid=" + myApiKey
+                        + "&units=metric"; 
+                    console.log(apiUrl);
+
+                    fetch(apiUrl)
+                        .then(function(response) {
+                            if (response.ok) {
+                                console.log(response);
+                                response.json().then(function(data) {
+                                    console.log(data);
+                                    displayWeatherForecast(data);
+                                });
+                            } else {
+                                alert(`Error: ${response.statusText}`);
+                            }
+                        })
+                        .catch(function(error) {
+                            // Notice this `.catch()` getting chained onto the end of the `.then()` method
+                            alert("Unable to connect to OpenWeather");
+                        });
+                });
+            }
+        })
+        .catch(function(error) {
+            // Notice this `.catch()` getting chained onto the end of the `.then()` method
+            alert("Unable to connect to OpenWeather");
+        })
+};
 
 
 
