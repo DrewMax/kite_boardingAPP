@@ -85,14 +85,15 @@ var displayWeatherToday = function (city) {
     // populate today
     console.log(city);
     $("#city-search-term").text(city.name +", " + city.sys.country);
+    $("#cityImage").attr("src", "./assets/css/img/1general.jpg");
     $("#date").text(moment().format("DD/MM/YY"));
     $("#apiTemp").text("Temperature: " + Math.round(city.main.temp*10)/10 + "°C");
     $("#apiHumidity").text("Humidity: " + city.main.humidity);
     $("#apiWind").text("Wind Speed: " + city.wind.speed + "KPH");
+    $("#lorem").text("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique reiciendis iure magni vero nihil, debitis rerum cumque optio id asperiores quasi perferendis a. Nobis ipsam placeat, laudantium eius rerum facere.");
     var iconCode = city.weather[0].icon;
     var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
     $('#icon').attr('src',iconUrl);
-    
 };
 
 var getWeatherForecast = function(city) {
@@ -174,6 +175,7 @@ var displayWeatherForecast = function(city) {
 
 
         // Create a new div with class and card structure
+//------- DREW, PLEASE UPDATE TO USE FOUNDATION INSTEAD OF BOOTSTRAP!!!------//
         var $card = $('<div class="col-sm-3 col-lg-3 mb-2">' +
                         '<div class="card">' +
                             '<h5 class="card-header">' + city.list[i].dt_txt.split(" ")[0] + '</h5>' +
@@ -187,8 +189,6 @@ var displayWeatherForecast = function(city) {
         $cardRows.append($card);
     }
 };
-
-
 
 // ---------------------------- MAPS FUNCTIONS ----------------------------//
 
