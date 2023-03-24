@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>  <!--polyfill library allows modern features in browsers that don't natively support them-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> 
     <title>KITE BOARDING APP</title>
    
 </head>
 <body>
-        <header class="head top-bar-right">
-          <h1 class="logo">Kawabanga</h1>
-        <p>Your number 1 source of info for all kiteboarders</p>
-        build a website that will help you find the best spots to kiteboard in the world.
-        <p>Sign up to our newsletter to get the latest news and updates</p>
-        <nav class="top-bar-left">
-            <ul>
-                <li><a href="#">Map</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Something else</a></li>
-            </ul>
-        </nav>   
-
+  <header>
+    <div class="header">
+      <img src="./assets/css/img/logo.jpeg" alt="boarding logo" class="logo">
+    </div>
+    <nav class="top-bar">
+      <div class="top-bar-left">
+        
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+<button id="open-modal-btn">Sign Up</button>
+  </header>
+ 
      <!-- Subscriotion form -->
     <!-- Button to open the modal -->
-<button id="open-modal-btn">Sign Up</button>
+
 
 <!-- Modal HTML -->
     <div id="signup-modal" class="modal">
@@ -37,55 +44,65 @@
         <span class="close">&times;</span>
         <h2>Sign Up</h2>
         <form>
-          <label for="name"></label>
-          <input type="text" id="name" name="name" placeholder="Name" required>
+        <label for="name">Enter full name:</label>
+          <input type="name" placeholder="Your Name" name="name" id="modalName" class="form-control"/>
           <br>
-          <label for="email"></label>
-          <input type="email" id="email" name="email" placeholder="Email" required>
+          <label for="modalEmail">Enter email address:</label>
+          <input type="email" placeholder="Email Address" name="email" id="modalEmail" class="form-control"/>
           <br>
-          <label for="experience"></label>
-          <input type="experience" id="experience" name="experience" placeholder="Experience" required>
+          <label for="experience">Experience</label>
+          <input type="experience" id="experience" name="experience" class="form-control" required>
           <br>
-          <label for="questions"></label>
-          <textarea name="textarea" id="questions" cols="10" rows="8" placeholder="Questions"></textarea>
-          <br>
-          <button type="submit" id="submit">Sign Up</button>
+          <button type="submit">Sign Up</button>
         </form>
       </div>
     </div>
-</header>
 
-<div class="carousel">
-  <img src="./assets/css/img/jumbo1.jpg">
-  <img src="./assets/css/img/jumbo2.jpg">
-  <img src="./assets/css/img/jumbo3.jpg">
-  <img src="./assets/css/img/jumbo4.jpg">
-  <img src="./assets/css/img/jumbo5.jpg">
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
- 
+    <!-- Jumbotron -->
+    <div id="image-container"></div>
+
+
     <section>
-        <div id = "button-container" class="/">
+        <div id = "button-container" class="grid-x">
           <form class="months" id="searchForm">
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button1">January</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button2">February</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button3">March</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button4">April</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button5">May</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button6">June</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button7">July</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button8">August</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button9">September</button>
+            </div>  
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button10">October</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button11">November</button>
+            </div>
+            <div class="cell small-1 medium-1 large-1">
             <button class="button-class" id="button12">December</button>
+            </div>
         </form>
      </div>
-
-        // sign up sheet, name, location, email
-        // module - button to activate
-        // pop up setInverval to be shoved in Users face after ? amount of time
 
     <section class="interactiveMap">
       <h3>Google Maps</h3>
@@ -93,49 +110,56 @@
           <div id="map"></div>
     </section>
 
-
-
-        <section class="latestNews col-12">
-            <img class="col-12" src="/w13/assets/css/img/lastestNews.jpeg" alt="post of latest news on kitsurfing">
-        </section>
-
-        
-        
+    <section class="currentWeather">
+      <h2> 
+          <span id="city-search-term"></span> 
+          <span id="date"></span> 
+          <span>
+              <img id="icon" src="" alt="">
+          </span> 
+      </h2>
+      <img id="cityImage" src="" alt="">
+      <p id="apiTemp"></p>
+      <p id="apiHumidity"></p>
+      <p id="apiWind"></p>
+      <p id="lorem"></p>
     </section>
-   
-    // interactive map with search bar nad response tab
-   // results with temp, wind and stuff
-        // search criteria 
-        // API fetch 
-        // GET requests
-        // POST response
 
-    <section class="searchCritera">
-        <div >
-
-        </div>
+    <div class="row"> <!-- change to formation  -->
+      <div class="col-12 mb-3"> <!-- change to formation  -->
+        <h2 id="forecastHeading"></h2>
+      </div>
+    </div>
+    <div id="cardRows" class="row containerForecasts">
+    </div>
+        
+        
     </section>
 
     <footer>
-      <h4>&copy team code bootcamp yo yo!!! 🐼🐼</h4>
-      <p>Read our <a href="./assets/html/privacy.html">Privacy policy</a></p>
+      <div class="">
+        <p>© 2020 Kite Boarding App</p>
+      </div>
 
       
     </footer>
 
-   
-    // links for jquery and CSS 
+    <!-- links for jquery and CSS--> 
      
      <div class=""></div>
+    
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-     <script src="./assets/js/months.js"></script>
      <script src="./assets/js/script.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-JoVU2j9u4G4AWGk2MOFN1fI+YhhRifpN30x1FDZd3lAePvi+UC5Uk9eU5MTp+8Y1yMLAV/iwCzJ10UrW+ZoSBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js" integrity="sha512-g0HQfVV0Dw1gzgmL3yxzBZrM0pJlzyXlX44q3hJ4g4C/PSF+lHcQ2aD8osvLgZbh+7VX9OLSwP/KoFvJy2zj7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    $(document).foundation();
+  </script>
 
 </body>
 </html>
