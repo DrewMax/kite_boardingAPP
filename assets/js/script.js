@@ -77,6 +77,8 @@ function updateCarousel() {
 var seasonArr_1 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
 
 const mapApiKey = "AIzaSyCtJSDbUKLSn6_t86GsjWt6dLbqj9KeDb8"
+const mapApiKey = "AIzaSyCtJSDbUKLSn6_t86GsjWt6dLbqj9KeDb8";
+var map;
 var seasonArr_1 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];				
 var seasonArr_2 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
 var seasonArr_3 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Lanzarote, Famara","29.1157476","-13.5559527",148,"kitesurf-lanzarote-famara-canary-islands"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Essaouira Bay","31.5061699","-9.7661591",125,"kitesurf-essaouira-bay-morocco"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Safaga, Soma Bay","26.8564696","33.9575303",118,"kitesurf-safaga-soma-bay-egypt"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
@@ -89,68 +91,142 @@ var seasonArr_9 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watam
 var seasonArr_10 = [["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Marsala, Lo Stagnone","37.8882145","12.4714460",121,"kitesurf-marsala-lo-stagnone-sicily-italy"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["Tarifa","36.0134134","-5.6047388",150,"kitesurf-tarifa-spain"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Essaouira Bay","31.5061699","-9.7661591",125,"kitesurf-essaouira-bay-morocco"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Camber Sands","50.9313082","0.8049013",139,"kitesurf-camber-sands-united-kingdom"],["Safaga, Soma Bay","26.8564696","33.9575303",118,"kitesurf-safaga-soma-bay-egypt"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Lake Garda - Malcesine & Navene","45.7940235","10.8335710",140,"kitesurf-lake-garda-malcesine-navene-italy"],["Esposende, Cavado River","41.5282839","-8.7814479",127,"kitesurf-esposende-cavado-river-portugal"]];
 var seasonArr_11 = [["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Essaouira Bay","31.5061699","-9.7661591",125,"kitesurf-essaouira-bay-morocco"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Safaga, Soma Bay","26.8564696","33.9575303",118,"kitesurf-safaga-soma-bay-egypt"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"]];
 var seasonArr_12 = [["Watamu Beach","-3.3546866","40.0170135",120,"kitesurf-watamu-beach-kenya"],["Mui Ne","10.9341368","108.2864947",142,"kitesurf-mui-ne-vietnam"],["Jericoacoara & Prea","-2.8123580","-40.4203163",136,"kitesurf-jericoacoara-prea-brazil"],["Jambiani","-6.3165949","39.5458169",129,"kitesurf-jambiani-zanzibar"],["Fuerteventura, Playa Sotavento","28.1307545","-14.2445413",119,"kitesurf-fuerteventura-playa-sotavento-canary-islands"],["Blougbergstrand, Cape Town","-33.8241693","18.4770965",146,"kitesurf-blougbergstrand-cape-town-south-africa"],["Dakhla","23.9200652","-15.7648696",124,"kitesurf-dakhla-morocco"],["Safety Bay, Perth","-32.3054511","115.7129860",137,"kitesurf-safety-bay-perth-australia"],["Paracas","-13.8580624","-76.2534428",126,"kitesurf-paracas-peru"],["La Ventana - Baja California Sur","24.0462212","-109.9872173",122,"kitesurf-la-ventana-baja-california-sur-mexico"],["Sal, Santa Maria","16.6142328","-22.8972836",149,"kitesurf-sal-santa-maria-cabo-verde"],["Christchurch Estuary","-43.5493254","172.7045802",147,"kitesurf-christchurch-estuary-new-zealand"],["Punta Chame","8.6521188","-79.7033000",138,"kitesurf-punta-chame-panama"],["Paje","-6.2662258","39.5356086",131,"kitesurf-paje-zanzibar"],["Boracay  Island","11.9657799","121.9285980",143,"kitesurf-boracay-island-philippines"],["Providenciales - Long Bay Beach","21.7721084","-72.1634656",128,"kitesurf-providenciales-long-bay-beach-turks-and-caicos"],["Kalpitiya","8.2265547","79.7349542",141,"kitesurf-kalpitiya-sri-lanka"]];
+var allSeasons = [seasonArr_1, seasonArr_2, seasonArr_3, seasonArr_4, seasonArr_5, seasonArr_6, seasonArr_7, seasonArr_8, seasonArr_9, seasonArr_10, seasonArr_11, seasonArr_12];
+var locations = seasonArr_1; // set initial locations
 
+// --------------------------- MODAL FUNCTIONS ---------------------------//
 
+function monthEl() {
+  document.getElementById("searchForm")
+  preventDefault();
+}
 
-// API and key all linked up
-// weather API and sports API
-// json response 
-// local storage for sign up sheet
+// Get the modal and close button
+const modal = document.getElementById("signup-modal");
+const closeBtn = document.getElementsByClassName("close")[0];
 
-// Insert interactive map and marker
-// This function MUST be placed towards the end
-function initMap() {
-    const blouberg = {lat: -3.35263, lng: 40.01689};
-    
-    // create map, centered at Blouberg
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 2,
-        center: blouberg,
-    });
+// Get the button that opens the modal
+const openBtn = document.getElementById("open-modal-btn");
 
-    let currentInfoWindow;
-    // create a function that will loop through the array and create markers for all locations
-    // create markers for all locations
-    for (var i=0; i<seasonArr_1.length; i++) {
-        const location = seasonArr_1[i];
-        const marker = new google.maps.Marker({
-            position: {lat: parseFloat(location[1]), lng: parseFloat(location[2])},
-            map: map,
-            title: location[0],
-        });
-        
-        const infowindow = new google.maps.InfoWindow({
-            content: location[0],
-            ariaLabel: location[0],
-            });
-
-        marker.addListener("click", () => {
-            // Close the current info window if one is open
-            if (currentInfoWindow) {
-                currentInfoWindow.close();
-            }
-
-            // Set the current info window to the one that was just opened
-            currentInfoWindow = infowindow;
-
-            // Open the new info window
-            infowindow.open({
-                anchor: marker,
-                map,
-            });
-        });
-
-        google.maps.event.addListener(map, 'click', function() {
-            // Close the current info window if one is open
-            if (currentInfoWindow) {
-                currentInfoWindow.close();
-            }            
-        });
-    }
+// When the user clicks the button, open the modal
+openBtn.onclick = function() {
+  modal.style.display = "block";
 };
-    
-window.initMap = initMap;
-    
+
+// When the user clicks the close button, close the modal
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// --------------------------- WEATHER FUNCTIONS ---------------------------//
+
+
+
+
+
+// ---------------------------- MAPS FUNCTIONS ----------------------------//
+
+// This code will execute only after the page has finished loading THINK IT CAN BE REMOVED....
+// document.addEventListener("DOMContentLoaded", function() {
+  
+    // This function MUST be placed towards the end
+    var initMap = function() {
+        const blouberg = {lat: -3.35263, lng: 40.01689};
+        
+        // create map, centered at Blouberg
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 2,
+            center: blouberg,
+        });
+
+        // array to hold markers
+        markers = [];
+
+        createMarkers(map);
+    };
+
+    var createMarkers = function(map) {
+        // clear existing markers
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        markers = [];
+        
+        console.log('locations:', locations);
+        let currentInfoWindow;
+
+        // create markers for all locations
+        for (var i=0; i<locations.length; i++) {
+            const location = locations[i];
+            const marker = new google.maps.Marker({
+                position: {lat: parseFloat(location[1]), lng: parseFloat(location[2])},
+                map: map,
+                title: location[0],
+            });
+            markers.push(marker); //it's supposed to be marker(s). Do NOT change to marker.
+
+            const infowindow = new google.maps.InfoWindow({
+                content: location[0],
+                ariaLabel: location[0],
+                });
+
+            marker.addListener("click", () => {
+                // Close the current info window if one is open
+                if (currentInfoWindow) {
+                    currentInfoWindow.close();
+                }
+
+                // Set the current info window to the one that was just opened
+                currentInfoWindow = infowindow;
+
+                // Open the new info window
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                });
+            });
+
+            google.maps.event.addListener(map, 'click', function() {
+                // Close the current info window if one is open
+                if (currentInfoWindow) {
+                    currentInfoWindow.close();
+                }            
+            });
+        }
+    };
+
+    // create event handlers for buttons 1 to 12
+    for (var i = 1; i <= 12; i++) {
+        document.getElementById('button' + i).addEventListener('click', (function(index) {
+            return function(event) {
+                event.preventDefault();
+                locations = allSeasons[index];
+                console.log(locations);
+                console.log(typeof map, map instanceof google.maps.Map);
+                createMarkers(map);
+                console.log("button", index, locations);
+            };
+        })(i-1)); //passing the current value of i to the immediately-invoked function expression (IIFE) as a parameter called index
+                    //The return function(event) creates a new function that is the actual event listener function. By passing the 
+                    // value of i as index to the IIFE, we create a closure that captures the current value of i for each button event listener.
+                    // Since JavaScript passes parameters by value, and not by reference, we can't simply pass the value of i directly without 
+                    // creating a closure as they would all use the last value of i (which would be 12) since the loop completes before the event listeners are triggered.
+                    // Wrapping the event listener function in an IIFE that takes i as a parameter and returns the actual event listener function, 
+                    // we are effectively creating a new closure with a new variable index that has a different value for each event listener function.
+    };
+
+    window.initMap = initMap;
+
+// });
+
+
 // The initMap function is used as a callback. This is to prevent GoogleMaps API callback before the 
 // script is run and the function is properly defined. This is to ensure proper loading sequence.
 // Note the <script> tag at the bottom of the body in the index.html file is removed

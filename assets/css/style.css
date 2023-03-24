@@ -5,6 +5,11 @@
 }
 
 
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px; /* The height is 400 pixels */
+    width: 80%; /* The width is the 80% of the width of the web page */
+  }
 
 #searchForm {
     font-family: 'Courier New', Courier, monospace;
@@ -152,7 +157,9 @@ input {
   text-decoration: none;
   cursor: pointer;
 }
-.carousel-container {
-  display: flex;
-  width: 100%;
-}
+
+
+  
+  
+  
+>>>>>>>>> Temporary merge branch 2
