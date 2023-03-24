@@ -51,35 +51,77 @@ window.onclick = function(event) {
   }
 };
 
+// --------------------------- JUMBOTRON FUNCTIONS ---------------------------//
+const jumbotron = document.getElementById("jumbotron");
+const jumbotronBtn = document.getElementById("jumbotron-btn");
+
+const photoApi = "https://api.unsplash.com/search/photos";
+const query = "kitesurfing";
+const drewApi = "MqP7xY07ZIp89anmqF3xFmp56jkIcUAdvqQ0biaCO9w"; 
+
+const imageContainer = document.getElementById("image-container");
+
+fetch(`${photoApi}?query=${query}&client_id=${drewApi}`)
+  .then(response => response.json())
+  .then(data => {
+    const imageUrls = data.results.map(result => result.urls.regular);
+
+    let slideContent = "";
+    for (let i = 0; i < imageUrls.length; i += 3) {
+      slideContent += `
+        <div class="slide">
+          <img src="${imageUrls[i]}"/>
+          ${i+1 < imageUrls.length ? `<img src="${imageUrls[i+1]}"/>` : ""}
+          ${i+2 < imageUrls.length ? `<img src="${imageUrls[i+2]}"/>` : ""}
+          ${i+3 < imageUrls.length ? `<img src="${imageUrls[i+3]}"/>` : ""}
+        </div>
+      `;
+    }
+    imageContainer.innerHTML = slideContent;
+
+
+    $(imageContainer).slick({
+      autoplay: true,
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: "linear",
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
+  })
+  .catch(error => console.log(error));
 // --------------------------- WEATHER FUNCTIONS ---------------------------//
 
-var getWeather = function(city) {
-    //format the OpenWeather api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" 
-    + city.replace(/ /g,"%20") 
+function getWeather(city) {
+  //format the OpenWeather api url
+  var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+    + city.replace(/ /g, "%20")
     + "&APPID="
     + myApiKey
-    + "&units=metric"; 
-    console.log(apiUrl);
+    + "&units=metric";
+  console.log(apiUrl);
 
-    // make a request to the url
-    fetch(apiUrl)
-        .then(function(response) {
-            if (response.ok) {
-                console.log(response);
-                response.json().then(function(data) {
-                    console.log(data);
-                    displayWeatherToday(data);
-                });
-            } else {
-                alert(`Error: ${response.statusText}`);
-            }
-        })
-        .catch(function(error) {
-            // Notice this `.catch()` getting chained onto the end of the `.then()` method
-            alert("Unable to connect to OpenWeather");
+  // make a request to the url
+  fetch(apiUrl)
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+          console.log(data);
+          displayWeatherToday(data);
         });
-};
+      } else {
+        alert(`Error: ${response.statusText}`);
+      }
+    })
+    .catch(function (error) {
+      // Notice this `.catch()` getting chained onto the end of the `.then()` method
+      alert("Unable to connect to OpenWeather");
+    });
+}
 
 var displayWeatherToday = function (city) {  
     // populate today
@@ -176,7 +218,8 @@ var displayWeatherForecast = function(city) {
 
         // Create a new div with class and card structure
 //------- DREW, PLEASE UPDATE TO USE FOUNDATION INSTEAD OF BOOTSTRAP!!!------//
-        var $card = $('<div class="col-sm-3 col-lg-3 mb-2">' +
+        var $card = $('<div class="grid-x">' + 
+                      '<div class="cell small-3 medium-3 large-2">' +
                         '<div class="card">' +
                             '<h5 class="card-header">' + city.list[i].dt_txt.split(" ")[0] + '</h5>' +
                             '<div class="card-body">' +
@@ -296,4 +339,3 @@ var displayWeatherForecast = function(city) {
 const googleMapsScript = document.createElement('script');
 googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key='+ mapApiKey+'&callback=initMap';
 document.head.appendChild(googleMapsScript);
-
