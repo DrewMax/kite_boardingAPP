@@ -93,6 +93,7 @@ fetch(`${photoApi}?query=${query}&client_id=${drewApi}`)
     });
   })
   .catch(error => console.log(error));
+
 // --------------------------- WEATHER FUNCTIONS ---------------------------//
 
 function getWeather(city) {
@@ -218,8 +219,8 @@ var displayWeatherForecast = function(city) {
 
         // Create a new div with class and card structure
 //------- DREW, PLEASE UPDATE TO USE FOUNDATION INSTEAD OF BOOTSTRAP!!!------//
-        var $card = $('<div class="grid-x">' + 
-                      '<div class="cell small-3 medium-3 large-2">' +
+        var $card = $('<div class="row">' + 
+                      '<div class="column small-2">' +
                         '<div class="card">' +
                             '<h5 class="card-header">' + city.list[i].dt_txt.split(" ")[0] + '</h5>' +
                             '<div class="card-body">' +

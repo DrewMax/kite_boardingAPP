@@ -16,6 +16,7 @@
    
 </head>
 <body>
+  <!------------------------------------Header----------------------------------------->
   <header>
     <div class="header">
       <img src="./assets/css/img/logo.jpeg" alt="boarding logo" class="logo">
@@ -27,12 +28,8 @@
     </nav>
 <button id="open-modal-btn">Sign Up</button>
   </header>
- 
-     <!-- Subscriotion form -->
-    <!-- Button to open the modal -->
 
-
-<!-- Modal HTML -->
+  <!----------------------------------- Modal HTML ---------------------------------->
     <div id="signup-modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -52,10 +49,14 @@
       </div>
     </div>
 
-    <!-- Jumbotron -->
+    <!-------------------------------------------- Jumbotron ---------------------------------------------->
     <div id="image-container"></div>
 
-    <!-- Search form -->
+    <!--------------------------------------------GOOGLEMAPS HEADER  ------------------------------------------------>
+ <h2 class="text-center font-custom text-shadow">Let's Go Exploring</h1>
+
+
+    <!-------------------------------------------- Search form ----------------------------------------------->
     <section>
         <div id = "button-container" class="grid-x">
           <form class="months" id="searchForm">
@@ -87,10 +88,16 @@
         </form>
      </div>
 
-    <section class="interactiveMap">
-      <h3>Google Maps</h3>
-          <!--The div element for the map -->
-          <div id="map"></div>
+    
+     
+          <!--------------------------------------The div element for the map ------------------------------------>
+
+
+     <section class="interactiveMap">
+          <div id="map" class="map-container">
+            <div class="responsive-embed">
+            </div>
+          </div>
     </section>
 
     <section class="currentWeather">
@@ -108,27 +115,21 @@
       <p id="lorem"></p>
     </section>
 
-    <div class="row"> <!-- change to formation  -->
-      <div class="col-12 mb-3"> <!-- change to formation  -->
+    <div class="grid-x">
+      <div class="cell margin-bottom-3">
         <h2 id="forecastHeading"></h2>
       </div>
     </div>
     <div id="cardRows" class="row containerForecasts">
     </div>
 
-        <section class="latestNews col-12">
-            <img class="col-12" src="/w13/assets/css/img/lastestNews.jpeg" alt="post of latest news on kitsurfing">
-        </section>
-
-    <div class="row"> <!-- change to formation  -->
-      <div class="col-12 mb-3"> <!-- change to formation  -->
+    <div class="grid-x">
+      <div class="cell margin-bottom-3">
         <h2 id="forecastHeading"></h2>
       </div>
     </div>
     <div id="cardRows" class="row containerForecasts">
-    </div>
-        
-        
+    </div> 
     </section>
 
     <footer>
@@ -139,7 +140,7 @@
       
     </footer>
 
-    <!-- links for jquery and CSS--> 
+    <!-------------------------------------------links for jquery------------------------------------------> 
      
      <div class=""></div>
     
@@ -150,9 +151,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
      <script src="./assets/js/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-JoVU2j9u4G4AWGk2MOFN1fI+YhhRifpN30x1FDZd3lAePvi+UC5Uk9eU5MTp+8Y1yMLAV/iwCzJ10UrW+ZoSBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js" integrity="sha512-g0HQfVV0Dw1gzgmL3yxzBZrM0pJlzyXlX44q3hJ4g4C/PSF+lHcQ2aD8osvLgZbh+7VX9OLSwP/KoFvJy2zj7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     $(document).foundation();
   </script>
 

@@ -43,6 +43,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #1b06ff;
+  background-size: cover;
 }
 
 #image-container img {
@@ -92,7 +93,29 @@ header nav {
   border-radius: 50px;
 }
 
-/* footer styles start */
+/*------------------------ GOOGLE MAPS styles STARTS---------------- */
+.font-custom {
+  font-family: 'Your custom font', sans-serif;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px black;
+}
+
+h2 {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+}
+.map-container {
+  height: 100vh;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------------------ footer styles start-------------------- */
 
 footer {
   background: #2330eb;
