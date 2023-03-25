@@ -25,6 +25,19 @@ var lon = "";
 function monthEl() {
   document.getElementById("searchForm")
   preventDefault();
+
+  const name = form.elements.name.value;
+  const email = form.elements.email.value;
+  const experience = form.elements.experience.value;
+  
+  // store form data in localStorage
+  const formData = {
+    name: name,
+    email: email,
+    experience: experience
+  };
+  
+  localStorage.setItem('formData', JSON.stringify(formData));
 }
 
 // Get the modal and close button
@@ -218,10 +231,9 @@ var displayWeatherForecast = function(city) {
 
 
         // Create a new div with class and card structure
-//------- DREW, PLEASE UPDATE TO USE FOUNDATION INSTEAD OF BOOTSTRAP!!!------//
-        var $card = $('<div class="row">' + 
-                      '<div class="column small-2">' +
-                        '<div class="card">' +
+        var $card = $('<div class="row small-up-5">' + 
+                      '<div class="row">' +
+                        '<div class="card box">' +
                             '<h5 class="card-header">' + city.list[i].dt_txt.split(" ")[0] + '</h5>' +
                             '<div class="card-body">' +
                                 '<img id="iconDay' + i + '" src="' + iconUrl + '" alt="">' +
@@ -233,6 +245,59 @@ var displayWeatherForecast = function(city) {
         $cardRows.append($card);
     }
 };
+
+// ---------------------------- LATEST NEWS FUNCTIONS ----------------------//
+const newsList = document.querySelector('news-list');
+const newsApiKey = 'a552a2b6307542d4b207200b2b2767e5';
+const category = 'shark attacks';
+let country = 'za';
+
+const buttons = document.querySelectorAll('button-class');
+buttons.forEach(button => {
+  button.addEventListener('click', event => {
+    country = event.target.value;
+    getNews();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function getNews() {
+  const url = `https://newsapi.org/v2/everything?country=${country}&category=${category}&apiKey=${newsApiKey}`;
+
+  fetch(url, { mode: 'no-cors' })
+    .then(response => response.text())
+    .then(data => {
+      // parse the XML data
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(data, 'text/xml');
+      const items = xml.querySelectorAll('item');
+
+      // clear previous news items
+      const newsList = document.getElementById('news-list');
+      newsList.innerHTML = '';
+
+      // process the items
+      items.forEach(item => {
+        const title = item.querySelector('title').textContent;
+        const link = item.querySelector('link').textContent;
+
+        // create list item and link
+        const listItem = document.createElement('li');
+        const linkItem = document.createElement('a');
+        linkItem.href = link;
+        linkItem.target = '_blank';
+        linkItem.textContent = title;
+
+        // add list item to news list
+        listItem.appendChild(linkItem);
+        newsList.appendChild(listItem);
+      });
+    })
+    .catch(error => {
+      console.error(error);
+    });
+})
+
+
 
 // ---------------------------- MAPS FUNCTIONS ----------------------------//
 
