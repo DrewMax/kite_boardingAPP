@@ -23,7 +23,7 @@ var lon = "";
 // --------------------------- MODAL FUNCTIONS ---------------------------//
 
 function monthEl() {
-  document.getElementById("searchForm")
+  document.getElementById("signup-modal").style.display = "block";
   preventDefault();
 
   const name = form.elements.name.value;
@@ -247,12 +247,10 @@ var displayWeatherForecast = function(city) {
 };
 
 // ---------------------------- LATEST NEWS FUNCTIONS ----------------------//
-const newsList = document.querySelector('news-list');
-const newsApiKey = 'a552a2b6307542d4b207200b2b2767e5';
-const category = 'shark attacks';
-let country = 'za';
 
-const buttons = document.querySelectorAll('button-class');
+const buttons = document.querySelectorAll('.country-btn');
+let country = 'us';
+
 buttons.forEach(button => {
   button.addEventListener('click', event => {
     country = event.target.value;
@@ -260,25 +258,34 @@ buttons.forEach(button => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function getNews() {
-  const url = `https://newsapi.org/v2/everything?country=${country}&category=${category}&apiKey=${newsApiKey}`;
+function getNews() {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": `https://newscatcher.p.rapidapi.com/v1/search_enterprise?q=shark%20attacks&lang=en&sort_by=relevancy&page=1&media=True&country=${country}`,
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": "04b3b89d13msh1cce6589354a67cp16b54ejsn521f52247071",
+      "X-RapidAPI-Host": "newscatcher.p.rapidapi.com"
+    }
+  };
 
-  fetch(url, { mode: 'no-cors' })
-    .then(response => response.text())
+  fetch(settings.url, {
+    method: 'GET',
+    headers: settings.headers,
+  })
+    .then(response => response.json())
     .then(data => {
-      // parse the XML data
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(data, 'text/xml');
-      const items = xml.querySelectorAll('item');
-
+      console.log(data);
       // clear previous news items
       const newsList = document.getElementById('news-list');
       newsList.innerHTML = '';
 
-      // process the items
-      items.forEach(item => {
-        const title = item.querySelector('title').textContent;
-        const link = item.querySelector('link').textContent;
+      // process the articles
+      const articles = data.articles;
+      articles.forEach(article => {
+        const title = article.title;
+        const link = article.link;
 
         // create list item and link
         const listItem = document.createElement('li');
@@ -295,7 +302,11 @@ document.addEventListener('DOMContentLoaded', function getNews() {
     .catch(error => {
       console.error(error);
     });
-})
+}
+
+document.addEventListener('DOMContentLoaded', getNews);
+
+
 
 
 
