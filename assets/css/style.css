@@ -6,10 +6,6 @@
 body {
   font-family: serif;
 }
-
-
-
-
 #searchForm {
     padding: 0px;
     font-size: 1rem;
@@ -19,7 +15,9 @@ body {
     border: 4px solid;
     font-weight: 300%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
 }
 #searchForm button {
@@ -90,6 +88,13 @@ header nav {
   max-width: 200px;
   border-radius: 50px;
 }
+p {
+  color: #cdc70f;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
 
 /*------------------------ GOOGLE MAPS styles STARTS---------------- */
 
@@ -97,6 +102,8 @@ header nav {
 #map {
     height: 400px; /* The height is 400 pixels */
     width: 80%; /* The width is the 80% of the width of the web page */
+    margin: 0 auto;
+    border: 1px solid black;
   }
 .text-shadow {
   text-shadow: 2px 2px black;
@@ -107,11 +114,7 @@ header nav {
   color: white;
   padding: 20px;
 }
-#map {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /*------------------------ FORECAST styles start-------------------- */
 .box {
@@ -137,6 +140,22 @@ header nav {
   margin-right: auto;
 }
 
+/*------------------------  NEWS styles start-------------------- */
+
+#news {
+  background-color: #1b06ff;
+  color: black;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+#news {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: auto;
+}
 
 /*------------------------ footer styles start-------------------- */
 
@@ -207,7 +226,7 @@ footer a {
 
 
 
-/* Style the close button */
+/* ---------------------------------Style the close button---------------------------------------- */
 .close {
   position: absolute;
   top: 0;
@@ -226,6 +245,50 @@ footer a {
   cursor: pointer;
 }
 
+/*----------------------------------------MEDIA QUERIES----------------------------------------*/
+
+/* Adjust button container width for smaller screens */
+@media only screen and (max-width: 768px) {
+  #button-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  nav li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  main {
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+/* Adjust button width for smaller screens */
+@media only screen and (max-width: 576px) {
+  .button {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  
+}
 
   
   

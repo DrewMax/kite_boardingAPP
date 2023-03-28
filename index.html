@@ -33,7 +33,7 @@
     <div id="signup-modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Sign Up</h2>
+        <h4 id="signHeader">Sign Up</h4>
         <form>
         <label for="name">Enter full name:</label>
           <input type="name" placeholder="Your Name" name="name" id="modalName" class="form-control"/>
@@ -44,6 +44,7 @@
           <label for="experience">Experience</label>
           <input type="experience" id="experience" name="experience" class="form-control" required>
           <br>
+          <p>Read about our <a href="../w13/assets/html/privacy.html">privacy policy</a></p>
           <button type="submit" class="signUp">Sign Up</button>
         </form>
       </div>
@@ -121,7 +122,7 @@
       </div>
     </div>
     <div id="cardRows" class="row containerForecasts">
-    </div>
+    
 
     <div class="grid-x">
       <div class="cell margin-bottom-3">
@@ -130,24 +131,27 @@
     </div>
     <div id="cardRows" class="row containerForecasts">
     </div> 
-    </section>
+    </div>
 
     <!-------------------------------------------- LATEST NEWS  -------------------------------------------->
+    <section id="news">
     <h1>News</h1>
 
     <div>
-      <button class="country-btn" value="us">USA</button>
-      <button class="country-btn" value="gb">UK</button>
+      <button class="button-class" value="us">USA</button>
+      <button class="button-class" value="gb">UK</button>
     </div>
+    <p>Coming soon!</p>
     
     <ul id="news-list"></ul>
-
+    </section>
      
     <!-------------------------------------------- Footer ---------------------------------------------->
 
     <footer>
       <div class="">
         <p>© 2020 Kite Boarding App</p>
+        <h4>Read about our <a href="./assets/html/terms.html">Terms and Conditions</a></h4>
       </div>
 
       
